@@ -1,0 +1,21 @@
+<html>
+<head>
+<title> @yield('title')</title>
+</head>
+<body>
+<header>
+    @yield('cabecalho')
+    <h1>Cabeçalho</h1>
+</header>
+<hr>
+<section>
+    @yield('conteudo')
+    <p>Conteúdo</p>
+</section>
+<hr>
+<footer>
+    @yield('rodape')
+    <p>Rodapé</p>
+</footer>
+</body>
+</html>
