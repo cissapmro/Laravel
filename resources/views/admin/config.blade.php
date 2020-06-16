@@ -2,6 +2,9 @@
 
 @section('title', 'Configurações')
 @section('cabecalho')
+
+    <a href="/logout">Sair</a>
+
     <x-alert>
         Dados realizados com sucesso...
     </x-alert>

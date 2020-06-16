@@ -1,21 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title> @yield('title')</title>
+<title> @yield('title') - Laravel</title>
 </head>
 <body>
 <header>
-    @yield('cabecalho')
-    <h1>Cabeçalho</h1>
+    <h2>Header</h2>
 </header>
 <hr>
 <section>
-    @yield('conteudo')
-    <p>Conteúdo</p>
+    @yield('content')
 </section>
 <hr>
 <footer>
     @yield('rodape')
-    <p>Rodapé</p>
+    <h2>Rodapé</h2>
 </footer>
 </body>
 </html>
