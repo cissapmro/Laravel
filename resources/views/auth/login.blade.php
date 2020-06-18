@@ -9,14 +9,21 @@
             </x-alert>
         @endforeach
     @endif
-
 <form method="POST">
     @csrf
         <input type="email" name="email" placeholder="Digite o seu e-mail" /><br />
     <input type="password" name="password" placeholder="Digite sua senha" /><br />
     <input type="submit"  value="Entrar" /><br />
 </form>
+
 @endsection
+
+
+
+
+
+
+
 <!--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

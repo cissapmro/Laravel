@@ -3,12 +3,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ConfigController extends Controller
 {
-    public function index(Request $request) {
 
-        $nome = 'Bonieky';
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request) {
+      // $user = Auth::user();
+        $user = $request->user();
+
+        $nome  = $user->name;
+       // $nome = 'Bonieky';
         $idade = '90';
         $cidade = $request->input('cidade');
 
@@ -19,12 +29,15 @@ class ConfigController extends Controller
             ['ingrediente'=> 'leite', 'qt'=> '4']
         ];
         $dados = [
-            'nome'=> 'Renan',
-            'idade'=> '20',
+            'nome'=> $nome,
+            'idade'=> $idade,
             'cidade'=> $cidade,
-            'lista'=> $lista
+            'lista'=> $lista,
+            'showform'=> Gate::allows('see-form') //permissão
         ];
+       // print_r($dados);
         return view('admin.config', $dados);
+
        // return view('config');
     }
     public function info(){

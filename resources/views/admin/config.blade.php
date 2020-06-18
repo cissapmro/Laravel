@@ -1,17 +1,15 @@
 @extends('layouts/admin')
-
 @section('title', 'Configurações')
 @section('cabecalho')
-
-    <a href="/logout">Sair</a>
-
+    Olá,
+    {{ $nome }} - <a href="/logout">Sair</a>
     <x-alert>
         Dados realizados com sucesso...
     </x-alert>
   <p>Cadastro</p>
 Meu nome é: {{$nome}}
 Versão: {{$versao}}
-
+@section('content')
 <ul>
     @forelse($lista as $item)
     <li>{{$item['ingrediente']}} - {{$item['qt']}}</li>
@@ -20,8 +18,7 @@ Versão: {{$versao}}
     @endforelse
 </ul>
 
-
-@section('conteudo')
+@if($showform)
 <form method="POST">
     @csrf
     <label>Nome:</label>
@@ -33,5 +30,6 @@ Versão: {{$versao}}
 
     <input type="submit" value="Enviar" /><br />
 </form>
+@endif
 @endsection
 

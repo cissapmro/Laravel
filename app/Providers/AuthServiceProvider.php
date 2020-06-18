@@ -25,6 +25,13 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //CRIAR PERMISSÃO:
+       Gate::define('see-form', function($user){
+          if($user->admin === 1){
+               return true;
+           } else {
+               return false;
+           }
+       });
     }
 }

@@ -46,7 +46,7 @@ Route::prefix('/tarefas')->group(function() {
 });
 
 Route::prefix('/config')->group(function(){
-    Route::get('/', 'Admin\ConfigController@index')->name('config.index')->middleware('auth');
+    Route::get('/', 'Admin\ConfigController@index')->name('config.index');
     Route::post('/', 'Admin\ConfigController@index');
 
     Route::get('info', 'Admin\ConfigController@info');
